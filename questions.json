@@ -1,0 +1,91 @@
+[{
+		"question": "Which country was the first to launch a sputnik?",
+		"A": "USA",
+		"B": "USSR",
+		"C": "China",
+		"D": "Canade",
+		"true": "B"
+	},
+
+	{
+		"question": "What was the name of the ship  which April 12, 1961 Yuri Gagarin made the first flight into space?",
+		"A": "Zapad",
+		"B": "Yug",
+		"C": "Vostok",
+		"D": "Sever",
+		"true": "C"
+	},
+
+	{
+		"question": "Which scientist is the inventor of a space rocket?",
+		"A": "Newton",
+		"B": "Tsiolkovsky",
+		"C": "Galilei",
+		"D": "Kepler",
+		"true": "B"
+	},
+
+	{
+		"question": "What is the planet nearest to the Sun?",
+		"A": "Pluto",
+		"B": "Venus",
+		"C": "Mars",
+		"D": "Mercury",
+		"true": "D"
+	},
+
+	{
+		"question": "Which astronaut was the first to go into outer space?",
+		"A": "White",
+		"B": "Leonov",
+		"C": "Gagarin",
+		"D": "Armstrong",
+		"true": "B"
+	},
+
+	{
+		"question": "How many people visited the moon?",
+		"A": "2",
+		"B": "8",
+		"C": "12",
+		"D": "10",
+		"true": "C"
+	},
+
+	{
+		"question": "Which constellation includes the polar star?",
+		"A": "Ursa Major",
+		"B": "Ursa Minor",
+		"C": "Big Leo",
+		"D": "Orion",
+		"true": "A"
+	},
+
+	{
+		"question": "How many satellites does Jupiter have?",
+		"A": "69",
+		"B": "4",
+		"C": "78",
+		"D": "54",
+		"true": "A"
+	},
+
+	{
+		"question": "How many space stations are existing?",
+		"A": "2",
+		"B": "1",
+		"C": "4",
+		"D": "3",
+		"true": "A"
+	},
+
+	{
+		"question": "What is the closest star to our sun?",
+		"A": "Alpha Centauri",
+		"B": "Altair",
+		"C": "Sirius",
+		"D": "Proxima Centauri",
+		"true": "D"
+	}
+
+]
