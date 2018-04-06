@@ -26,7 +26,7 @@ def hlp(bot, update):
     Made by Pokrovsky Valery (valer1435) for training.
     Project repository: https://github.com/valer1435/Space_travel_bot
     Thanks to Maxim Kitanin for writing questions for the quiz
-    The Certificate is created on http://www.certificatemagic.com/ 
+    The Certificate is created on http://www.certificatemagic.com/
     """, reply_markup=markup)
     return ConversationHandler.END
 
@@ -57,7 +57,7 @@ def quiz(bot, update, user_data):
     user_data["hint"] = True
     update.message.reply_text("Hi! I have some questions for you.")
     q = quest[random.choice(range(LENTH_JSON))]
-    answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]]]
+    answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/stopquiz"]]
     markup = ReplyKeyboardMarkup(answer_keyboard)
     update.message.reply_text(q["question"], reply_markup=markup)
     user_data["quiz"].append(q)
@@ -74,7 +74,7 @@ def question(bot, update, user_data):
 
     else:
         if user_data["hint"]:
-            answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/hint"]]
+            answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/hint", "/stopquiz"]]
             markup = ReplyKeyboardMarkup(answer_keyboard)
             update.message.reply_text("Wrong! I can give you an one hint.", reply_markup=markup)
             return 1
@@ -92,7 +92,7 @@ def question(bot, update, user_data):
         if flag:
             continue
         break
-    answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]]]
+    answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/stopquiz"]]
     markup = ReplyKeyboardMarkup(answer_keyboard)
     update.message.reply_text(q["question"], reply_markup=markup)
     user_data["quiz"].append(q)
@@ -126,7 +126,7 @@ def all_sumbit(bot, update, user_data):
         user_data["score"] += 1
     else:
         if user_data["hint"]:
-            answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/hint"]]
+            answer_keyboard = [[q["A"], q["B"]], [q["C"], q["D"]], ["/hint", "/stopquiz"]]
             mark= ReplyKeyboardMarkup(answer_keyboard)
             update.message.reply_text("Wrong! I can give you an one hint.", reply_markup=mark)
             return 3
@@ -155,13 +155,12 @@ def stop(bot, update):
 
 
 def main():
-    updater = Updater("     ")
+    updater = Updater("")
     dp = updater.dispatcher
-
 
 # вот сейчас костыль, но без него - никак
     quiz_handler = ConversationHandler(
-        entry_points=[ CommandHandler("quiz", quiz, pass_user_data=True), CommandHandler("start", start), CommandHandler("day_photo", day_photo), CommandHandler("mars", mars), CommandHandler("help", hlp)],
+        entry_points=[CommandHandler("quiz", quiz, pass_user_data=True), CommandHandler("start", start), CommandHandler("day_photo", day_photo), CommandHandler("mars", mars), CommandHandler("help", hlp)],
         states={
             1: [MessageHandler(Filters.text, question, pass_user_data=True), CommandHandler("hint", hint, pass_user_data=True), CommandHandler("stop", stop), CommandHandler("start", start), CommandHandler("day_photo", day_photo), CommandHandler("mars", mars), CommandHandler("help", hlp)],
             3: [MessageHandler(Filters.text, all_sumbit, pass_user_data=True), CommandHandler("hint", hint, pass_user_data=True), CommandHandler("stop", stop), CommandHandler("start", start), CommandHandler("day_photo", day_photo), CommandHandler("mars", mars), CommandHandler("help", hlp)]
