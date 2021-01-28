@@ -1,8 +1,7 @@
-# Space_travel_bot
+# Space travel bot
 
-Hi! It's a bot for Yandex.lyceum project!
-https://web.telegram.org/#/im?p=@SpaceShipTravelbot
+Учебный бот с космической тематикой, сделанный в ходе обучения в яндекс-лицее. Функционал бота-паказывать различные картинки NASA с описанием и простая викторина с автоматически генерируемым сертификатом. 
 
-I  use NASA open api https://api.nasa.gov and  http://www.certificatemagic.com/
 
-Enjoy!
+Использованы api https://api.nasa.gov and  http://www.certificatemagic.com/
+
